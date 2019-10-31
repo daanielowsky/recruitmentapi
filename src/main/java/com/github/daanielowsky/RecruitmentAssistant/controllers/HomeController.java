@@ -20,4 +20,10 @@ public class HomeController {
         return "loginPage";
     }
 
+    @GetMapping
+    public String registerForm(Model model){
+        model.addAttribute("user", new UserDTO());
+        return "registerPage";
+    }
+
 }
