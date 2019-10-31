@@ -9,9 +9,9 @@
 <center><h2>Rejestracja</h2></center>
 <form:form modelAttribute="user" method="post">
     <p>Imię i nazwisko: <form:input path="fullname"/></p>
-    <p>Nazwa Użytkownika: <form:input path="username"/></p>
+    <p>Nazwa Użytkownika: <form:input path="username"/><form:errors path="username"/> </p>
     <p>Hasło<form:password path="password"/></p>
-    <p>Powtórz hasło: <form:password path="confirmedPassword"/></p>
+    <p>Powtórz hasło: <form:password path="confirmedPassword"/><form:errors path="confirmedPassword"/> </p>
     <p><form:button>Zarejestruj</form:button></p>
 </form:form>
 </body>
