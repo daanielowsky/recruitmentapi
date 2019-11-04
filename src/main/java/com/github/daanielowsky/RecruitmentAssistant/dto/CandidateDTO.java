@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Data @RequiredArgsConstructor
@@ -22,7 +23,6 @@ public class CandidateDTO {
     private String email;
 
     @NumberFormat(pattern = "###-###-###")
-    @NotNull
     private Long phoneNumber;
 
     @NotNull
@@ -37,6 +37,9 @@ public class CandidateDTO {
     @NotNull
     @NumberFormat(pattern = "#,###,###.##")
     private BigDecimal grossExpectation;
+
+    @Size(min = 1, message = "Pole musi zostać zaznaczone")
+    private String agreement = "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)).";
 
     private String contentType;
 

@@ -23,7 +23,7 @@ public class Candidate {
     @Column(nullable = false)
     private String email;
 
-    @Column(name = "phone_number", nullable = false)
+    @Column(name = "phone_number")
     private Long phoneNumber;
 
     @Column(nullable = false)
