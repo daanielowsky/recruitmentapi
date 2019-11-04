@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Data @RequiredArgsConstructor
@@ -35,7 +36,7 @@ public class Candidate {
     private String whenIsReadyToStart;
 
     @Column(nullable = false)
-    private Long grossExpectation;
+    private BigDecimal grossExpectation;
 
     @Lob
     @Column(columnDefinition = "MEDIUMBLOB")
