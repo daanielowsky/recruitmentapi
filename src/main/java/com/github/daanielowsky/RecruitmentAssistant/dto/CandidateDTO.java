@@ -44,4 +44,6 @@ public class CandidateDTO {
     private String contentType;
 
     private byte[] file;
+
+    private String fileName;
 }
