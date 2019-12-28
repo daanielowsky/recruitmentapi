@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-<form:form modelAttribute="candidate" method="post" enctype="multipart/form-data" cssClass="was-validated">
+<form:form enctype="multipart/form-data" modelAttribute="candidate" method="post">
 <center>
     <c:if test="${param.complete != null}">
         <h1><p style="color: greenyellow">Twoje zgłoszenie zostało wysłane! Dziękujemy.</p></h1>
@@ -46,7 +46,7 @@
 <br>
 
 <p><form:label path="file">CV*</form:label><form:errors path="file"/></p>
-<p><input type="file" name="file"></p>
+<p><form:input type="file" path="file"/> </p>
 <br>
 
 <center><h1>Dodatkowe pytania</h1></center>
