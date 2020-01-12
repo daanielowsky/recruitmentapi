@@ -45,8 +45,7 @@
 <p><form:input path="position"/></p>
 <br>
 
-<p><form:label path="file">CV*</form:label><form:errors path="file"/></p>
-<p><form:input type="file" path="file"/> </p>
+<p>CV: <input type="file" name="cvFromCandidate"></p>
 <br>
 
 <center><h1>Dodatkowe pytania</h1></center>

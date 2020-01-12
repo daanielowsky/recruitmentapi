@@ -34,13 +34,8 @@ public class RecruitmentController {
         return "recruitment";
     }
 
-    @Bean
-    public MultipartResolver multipartResolver() {
-        return new StandardServletMultipartResolver();
-    }
-
     @PostMapping("/recruitment")
-    public String addingNewCandidateToDataBase(@RequestParam MultipartFile file, @Valid @ModelAttribute("candidate") CandidateDTO candidateDTO, BindingResult result) throws IOException {
+    public String addingNewCandidateToDataBase(@RequestParam("cvFromCandidate") MultipartFile cvFromCandidate, @Valid @ModelAttribute("candidate") CandidateDTO candidateDTO, BindingResult result) throws IOException {
         if(result.hasErrors()){
             return "recruitment";
         }
@@ -48,13 +43,13 @@ public class RecruitmentController {
             result.rejectValue("agreement", null, "Aby aplikować musisz wyrazić zgodę.");
             return "recruitment";
         }
-        if(!file.getOriginalFilename().endsWith("jpg")){
+        if(!cvFromCandidate.getOriginalFilename().endsWith("jpg")){
             result.rejectValue("file", null, "Plik musi posiadać rozszerzenie .jpg!");
             return "recruitment";
         }
-        candidateDTO.setContentType(file.getContentType());
-        candidateDTO.setFile(file.getBytes());
-        candidateDTO.setFileName(file.getName());
+        candidateDTO.setContentType(cvFromCandidate.getContentType());
+        candidateDTO.setFile(cvFromCandidate.getBytes());
+        candidateDTO.setFileName(cvFromCandidate.getName());
         candidateService.creatingNewCandidate(candidateDTO);
         return "redirect/recruitment?complete";
     }
