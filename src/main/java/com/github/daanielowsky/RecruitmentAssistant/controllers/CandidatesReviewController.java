@@ -2,6 +2,7 @@ package com.github.daanielowsky.RecruitmentAssistant.controllers;
 
 import com.github.daanielowsky.RecruitmentAssistant.entity.Candidate;
 import com.github.daanielowsky.RecruitmentAssistant.services.CandidateService;
+import com.github.daanielowsky.RecruitmentAssistant.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +14,11 @@ import java.util.List;
 public class CandidatesReviewController {
 
     private CandidateService candidateService;
+    private UserService userService;
 
-    public CandidatesReviewController(CandidateService candidateService) {
+    public CandidatesReviewController(CandidateService candidateService, UserService userService) {
         this.candidateService = candidateService;
+        this.userService = userService;
     }
 
 
@@ -25,12 +28,14 @@ public class CandidatesReviewController {
         List<Candidate> listOfAllCandidates = candidateService.getListOfAllCandidates();
 
         model.addAttribute("listOfAllCandidates", listOfAllCandidates);
+        model.addAttribute("user", userService.getLoggedUser());
 
         return "candidates";
     }
 
-    @GetMapping("/candidates/{id}/reject")
-    public String rejectingCandidatesApplication(@PathVariable("id") String userID){
-
+    @GetMapping("/candidate/{id}/reject")
+    public String rejectingCandidatesApplication(@PathVariable("id") Long id){
+        candidateService.rejectingCandidateApplicationForAJob(id);
+        return "redirect:/candidates";
     }
 }

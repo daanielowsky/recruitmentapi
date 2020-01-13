@@ -20,10 +20,12 @@ public class CandidateService {
 
     private CandidateRepository candidateRepository;
     private MailSender mailSender;
+    private UserService userService;
 
-    public CandidateService(CandidateRepository candidateRepository, MailSender mailSender) {
+    public CandidateService(CandidateRepository candidateRepository, MailSender mailSender, UserService userService) {
         this.candidateRepository = candidateRepository;
         this.mailSender = mailSender;
+        this.userService = userService;
     }
 
     public void creatingNewCandidate(CandidateDTO candidateDTO){
@@ -37,22 +39,23 @@ public class CandidateService {
         return allCandidates;
     }
 
-    public void rejectingCandidateApplicationForAJob(String userID){
+    public void rejectingCandidateApplicationForAJob(Long userID){
 
         Candidate candidate = candidateRepository.getFirstById(userID);
         String email = candidate.getEmail();
         String position = candidate.getPosition();
+        String fullname = userService.getLoggedUser().getFullname();
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
         simpleMailMessage.setTo(email);
-        simpleMailMessage.setFrom("Company Name");
+        simpleMailMessage.setFrom("CompanyName");
         simpleMailMessage.setSubject("Company Name - " + position + " - rejection");
         simpleMailMessage.setText("Dear " + candidate.getFirstname() + "" +
                 "\n Unfortunately yours application did not match with our requirements. Please stand by for a another job position open in the future." +
                 "\n Best Regards" +
                 "\n HR Team" +
-                "\n Lorem Ipsum");
+                "\n" + fullname);
 
         mailSender.send(simpleMailMessage);
 

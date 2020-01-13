@@ -9,5 +9,5 @@ import java.util.List;
 public interface CandidateRepository extends JpaRepository <Candidate, Long> {
 
     List<Candidate> getAllBy();
-    Candidate getFirstById(String id);
+    Candidate getFirstById(Long id);
 }
