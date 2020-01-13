@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static com.github.daanielowsky.RecruitmentAssistant.services.Converter.*;
 
 @Service
@@ -24,5 +26,10 @@ public class CandidateService {
         logger.info(candidateDTO.toString());
         Candidate candidate = convertingFromCandidateDtoToCandidateEntity(candidateDTO);
         candidateRepository.save(candidate);
+    }
+
+    public List<Candidate> getListOfAllCandidates(){
+        List<Candidate> allCandidates = candidateRepository.getAllBy();
+        return allCandidates;
     }
 }

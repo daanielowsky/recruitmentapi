@@ -5,6 +5,8 @@ import com.github.daanielowsky.RecruitmentAssistant.dto.UserDTO;
 import com.github.daanielowsky.RecruitmentAssistant.entity.Candidate;
 import com.github.daanielowsky.RecruitmentAssistant.entity.User;
 
+import java.util.List;
+
 public class Converter {
 
     public static User convertingFromUserDtoToRegularUserEntity(UserDTO userDTO){
