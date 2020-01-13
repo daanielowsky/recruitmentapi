@@ -22,6 +22,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String mainPage(){
+        if(userService.getLoggedUser() != null){
+            return "redirect:/candidates";
+        }
         return "mainPage";
     }
 

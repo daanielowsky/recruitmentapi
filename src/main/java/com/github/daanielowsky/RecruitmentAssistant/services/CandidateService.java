@@ -51,9 +51,9 @@ public class CandidateService {
         simpleMailMessage.setTo(email);
         simpleMailMessage.setFrom("CompanyName");
         simpleMailMessage.setSubject("Company Name - " + position + " - rejection");
-        simpleMailMessage.setText("Dear " + candidate.getFirstname() + "" +
-                "\n Unfortunately yours application did not match with our requirements. Please stand by for a another job position open in the future." +
-                "\n Best Regards" +
+        simpleMailMessage.setText("Dear " + candidate.getFirstname() + "," +
+                "\n unfortunately yours application did not match with our requirements. Please stand by for a another job position open in the future." +
+                "\n \n Best Regards" +
                 "\n HR Team" +
                 "\n" + fullname);
 
