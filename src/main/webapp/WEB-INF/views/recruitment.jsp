@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/media/style.css">
 </head>
 <body>
 <div class="container">
@@ -45,7 +46,7 @@
 <p><form:input path="position"/></p>
 <br>
 
-<p>CV: <input type="file" name="cvFromCandidate"></p>
+<p>CV: <input type="file" name="cvFromCandidate"></p> <form:errors cssClass="errors" path="file"/>
 <br>
 
 <center><h1>Dodatkowe pytania</h1></center>
@@ -56,14 +57,16 @@
 <p><form:input path="whenIsReadyToStart"/></p>
 <br>
 
-<p><form:label path="grossExpectation">Jakie są Twoje oczekiwania finansowe (brutto)?</form:label><form:errors
+<p><form:label path="grossExpectation">Jakie są Twoje oczekiwania finansowe (brutto)?*</form:label><form:errors
         path="grossExpectation"/></p>
 <p><form:input path="grossExpectation"/></p>
 <br>
 
 <center><h2>Zgoda</h2></center>
 <div class="form-group form-check">
-    <form:checkbox path="agreement" value="${candidate.agreement}"/> ${candidate.agreement}
+    <form:errors path="agreement"/><br>
+    <form:checkbox  path="agreement" value="0" title="${candidate.agreement}" /> ${candidate.agreement}
+
 </div>
     <br>
     <button type="submit" class="btn btn-primary">WYŚLIJ</button>

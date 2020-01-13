@@ -35,7 +35,6 @@ public class Candidate {
     @Column(nullable = false)
     private String whenIsReadyToStart;
 
-    @Column(nullable = false)
     private BigDecimal grossExpectation;
 
     @Lob

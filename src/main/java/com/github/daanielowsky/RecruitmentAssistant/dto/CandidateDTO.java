@@ -34,8 +34,7 @@ public class CandidateDTO {
     @NotNull
     private String whenIsReadyToStart;
 
-    @NotNull
-    @NumberFormat(pattern = "#,###,###.##")
+    @NumberFormat(pattern = "###,###,###")
     private BigDecimal grossExpectation;
 
     @Size(min = 1, message = "Pole musi zostać zaznaczone")
