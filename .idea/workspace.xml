@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed2d6f2-7f73-485f-8e64-5282e9c5fa90" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daanielowsky/RecruitmentAssistant/services/CandidateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daanielowsky/RecruitmentAssistant/services/CandidateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daanielowsky/RecruitmentAssistant/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daanielowsky/RecruitmentAssistant/controllers/HomeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +107,7 @@
       <workItem from="1578865540626" duration="97000" />
       <workItem from="1578865658140" duration="436000" />
       <workItem from="1578897096443" duration="3056000" />
-      <workItem from="1578924122321" duration="3411000" />
+      <workItem from="1578924122321" duration="3896000" />
     </task>
     <servers />
   </component>

@@ -30,12 +30,18 @@ public class HomeController {
 
     @GetMapping("/login")
     public String loginForm(Model model){
+        if(userService.getLoggedUser() != null){
+            return "redirect:/candidates";
+        }
         model.addAttribute("user", new UserDTO());
         return "loginPage";
     }
 
     @GetMapping("/register")
     public String registerForm(Model model){
+        if(userService.getLoggedUser() != null){
+            return "redirect:/candidates";
+        }
         model.addAttribute("user", new UserDTO());
         return "registerPage";
     }
