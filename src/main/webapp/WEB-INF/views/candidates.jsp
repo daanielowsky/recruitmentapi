@@ -15,6 +15,9 @@
         <br>
     -Email: ${candidate.email}<br>
     -Numer Telefonu: ${candidate.phoneNumber}</p>
+
+    <button onclick="javascript:document.href='/candidate/${candidate.id}/reject'">Odrzuć</button>
+    <button onclick="javascript:document.href='/candidate/${candidate.id}/accept'">Akceptuj</button>
     <hr>
     <br>
 </c:forEach>
