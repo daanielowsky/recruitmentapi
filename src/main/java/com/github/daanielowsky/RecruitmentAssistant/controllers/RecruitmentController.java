@@ -14,6 +14,7 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,6 +54,8 @@ public class RecruitmentController {
         candidateDTO.setFile(cvFromCandidate.getBytes());
         candidateDTO.setFileName(cvFromCandidate.getName());
         candidateService.creatingNewCandidate(candidateDTO);
+        candidateService.confirmationOfJobApply(candidateDTO);
+
         return "redirect:/recruitment?complete";
     }
 }

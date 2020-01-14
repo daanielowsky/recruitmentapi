@@ -49,12 +49,12 @@ public class CandidateService {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
         simpleMailMessage.setTo(email);
-        simpleMailMessage.setFrom("CompanyName");
-        simpleMailMessage.setSubject("Company Name - " + position + " - rejection");
+        simpleMailMessage.setFrom("LoremIpsum");
+        simpleMailMessage.setSubject("Lorem Ipsum - " + position + " - rejection");
         simpleMailMessage.setText("Dear " + candidate.getFirstname() + "," +
                 "\n unfortunately yours application did not match with our requirements. Please stand by for a another job position open in the future." +
                 "\n \n Best Regards" +
-                "\n HR Team" +
+                "\n HR Team of Lorem Ipsum" +
                 "\n" + fullname);
 
         mailSender.send(simpleMailMessage);
@@ -71,13 +71,26 @@ public class CandidateService {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
         simpleMailMessage.setTo(email);
-        simpleMailMessage.setFrom("CompanyName");
-        simpleMailMessage.setSubject("Company Name - " + position + " - rejection");
+        simpleMailMessage.setFrom("LoremIpsum");
+        simpleMailMessage.setSubject("Lorem Ipsum - " + position + " - rejection");
         simpleMailMessage.setText(message);
 
         mailSender.send(simpleMailMessage);
 
         candidateRepository.delete(candidate);
 
+    }
+
+    public void confirmationOfJobApply(CandidateDTO candidateDTO){
+
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+
+        simpleMailMessage.setFrom("LoremIpsum");
+        simpleMailMessage.setTo(candidateDTO.getEmail());
+        simpleMailMessage.setSubject("Confirmation of yours application");
+        simpleMailMessage.setText("Dear " + candidateDTO.getFirstName() +
+                "\n Thank you for your intrest in our job offer. " +
+                "\n Best regards" +
+                "\n Lorem Ipsum");
     }
 }

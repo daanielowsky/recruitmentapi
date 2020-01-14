@@ -6,7 +6,7 @@
 </head>
 <body>
 <center>
-<form>
+<form method="post">
     <p>Treść wiadomości</p>
     <textarea rows="10" cols="70" name="message" placeholder="Tu wpisz swoją wiadomość"></textarea><br>
     <button>Wyślij</button>
