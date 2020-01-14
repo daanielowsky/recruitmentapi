@@ -38,7 +38,7 @@
             <tr>
                 <td class="paddingForTable">${candidate.firstname} ${candidate.lastname}</td>
                 <td class="paddingForTable">${candidate.position}</td>
-                <td class="paddingForTable">${candidate.grossExpectation}</td>
+                <td class="paddingForTable">${candidate.grossExpectation} PLN</td>
                 <td class="paddingForTable">${candidate.experience}</td>
                 <td class="paddingForTable">${candidate.whenIsReadyToStart}</td>
                 <td class="paddingForTable">${candidate.email}</td>

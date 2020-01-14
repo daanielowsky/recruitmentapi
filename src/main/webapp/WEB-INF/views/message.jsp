@@ -3,8 +3,9 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/media/style.css">
 </head>
-<body>
+<body class="bodyBackground">
 <center>
 <form method="post">
     <p>Treść wiadomości</p>
