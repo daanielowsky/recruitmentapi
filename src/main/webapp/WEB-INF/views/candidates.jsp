@@ -11,60 +11,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
-<body style="background-image: url('https://i.ibb.co/f8Jfsyh/hr.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;">
+<body class="bodyBackground">
 <br>
-Witaj ${user.fullname}
-<%--<br>--%>
-<%--<c:forEach items="${listOfAllCandidates}" var="candidate">--%>
-<%--    <p>Kandydat: ${candidate.firstname} ${candidate.lastname}</p>--%>
-<%--    <p>Pozycja: ${candidate.position}</p>--%>
-<%--    <p>Wymagania finansowe: ${candidate.grossExpectation}</p>--%>
-<%--    <p>Doświadczenie: ${candidate.experience}</p>--%>
-<%--    <p>Kiedy jest gotów zacząć: ${candidate.whenIsReadyToStart}</p>--%>
-<%--    <p>Kontakt:--%>
-<%--        <br>--%>
-<%--        -Email: ${candidate.email}<br>--%>
-<%--        -Numer Telefonu: ${candidate.phoneNumber}</p>--%>
+<div class="container middleDiv">
+    <p style="float: left">Zalogowano jako ${user.fullname}</p>
+    <button style="float: right" onclick="javascript:document.location.href='/logout'">Wyloguj</button>
 
-<%--    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć</button>--%>
-<%--    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Odrzuć z własną--%>
-<%--        wiadomością--%>
-<%--    </button>--%>
-<%--    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/accept'">Akceptuj</button>--%>
-<%--    <hr>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
-
-<div class="container" style="background: aliceblue">
-    <h2>Kandydaci</h2>
+    <center><h2 style="padding-top: 10px">Kandydaci</h2></center>
     <p>Tutaj trafiają wszystkie aplikacje na stanowiska do firmy.</p>
     <table class="table table-hover">
         <thead>
         <tr>
-            <th class="padding">Kandydat</th>
-            <th class="padding">Pozycja</th>
-            <th class="padding">Wymagania finansowe</th>
-            <th class="padding">Doświadczenie</th>
-            <th class="padding">Kiedy może rozpocząć pracę</th>
-            <th class="padding">Email</th>
-            <th class="padding">Numer telefonu</th>
-            <th class="padding">Opcje</th>
+            <th class="paddingForTable">Kandydat</th>
+            <th class="paddingForTable">Pozycja</th>
+            <th class="paddingForTable">Wymagania finansowe</th>
+            <th class="paddingForTable">Doświadczenie</th>
+            <th class="paddingForTable">Kiedy może rozpocząć pracę</th>
+            <th class="paddingForTable">Email</th>
+            <th class="paddingForTable">Numer telefonu</th>
+            <th class="paddingForTable">CV</th>
+            <th class="paddingForTable">Opcje</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${listOfAllCandidates}" var="candidate">
             <tr>
-                <td class="padding">${candidate.firstname} ${candidate.lastname}</td>
-                <td class="padding">${candidate.position}</td>
-                <td class="padding">${candidate.grossExpectation}</td>
-                <td class="padding">${candidate.experience}</td>
-                <td class="padding">${candidate.whenIsReadyToStart}</td>
-                <td class="padding">${candidate.email}</td>
-                <td class="padding">${candidate.phoneNumber}</td>
-                <td class="padding">
+                <td class="paddingForTable">${candidate.firstname} ${candidate.lastname}</td>
+                <td class="paddingForTable">${candidate.position}</td>
+                <td class="paddingForTable">${candidate.grossExpectation}</td>
+                <td class="paddingForTable">${candidate.experience}</td>
+                <td class="paddingForTable">${candidate.whenIsReadyToStart}</td>
+                <td class="paddingForTable">${candidate.email}</td>
+                <td class="paddingForTable">${candidate.phoneNumber}</td>
+                <td class="paddingForTable"><a href="/">>>>KLIK<<<</a> </td>
+                <td class="paddingForTable">
                     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć
                     </button>
                     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Własna
