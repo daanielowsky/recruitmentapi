@@ -61,4 +61,23 @@ public class CandidateService {
 
         candidateRepository.delete(candidate);
     }
+
+    public void rejectingCandidateApplicationWithOwnMessage(Long userID, String message) {
+
+        Candidate candidate = candidateRepository.getFirstById(userID);
+        String email = candidate.getEmail();
+        String position = candidate.getPosition();
+
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+
+        simpleMailMessage.setTo(email);
+        simpleMailMessage.setFrom("CompanyName");
+        simpleMailMessage.setSubject("Company Name - " + position + " - rejection");
+        simpleMailMessage.setText(message);
+
+        mailSender.send(simpleMailMessage);
+
+        candidateRepository.delete(candidate);
+
+    }
 }

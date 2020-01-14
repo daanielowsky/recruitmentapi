@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -36,6 +38,18 @@ public class CandidatesReviewController {
     @GetMapping("/candidate/{id}/reject")
     public String rejectingCandidatesApplication(@PathVariable("id") Long id){
         candidateService.rejectingCandidateApplicationForAJob(id);
+        return "redirect:/candidates";
+    }
+
+    @GetMapping("/candidate/{id}/own/reject")
+    public String rejectingCandidatesApplicationWithOwnMessageForm(){
+        return "message";
+    }
+
+    @PostMapping("/candidate/{id}/own/reject")
+    public String rejectingCandidatesApplicationWithOwnMessage(@PathVariable("id") Long id, @RequestParam("message") String message){
+
+        candidateService.rejectingCandidateApplicationWithOwnMessage(id,message);
         return "redirect:/candidates";
     }
 }

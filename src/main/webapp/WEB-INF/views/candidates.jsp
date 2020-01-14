@@ -20,6 +20,7 @@ Witaj ${user.fullname}
     -Numer Telefonu: ${candidate.phoneNumber}</p>
 
     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć</button>
+    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Odrzuć z własną wiadomością</button>
     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/accept'">Akceptuj</button>
     <hr>
     <br>
