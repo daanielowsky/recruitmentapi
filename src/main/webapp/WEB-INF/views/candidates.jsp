@@ -11,7 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
-<body>
+<body style="background-image: url('https://i.ibb.co/f8Jfsyh/hr.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
 <br>
 Witaj ${user.fullname}
 <%--<br>--%>
@@ -35,7 +38,7 @@ Witaj ${user.fullname}
 <%--    <br>--%>
 <%--</c:forEach>--%>
 
-<div class="container">
+<div class="container" style="background: aliceblue">
     <h2>Kandydaci</h2>
     <p>Tutaj trafiają wszystkie aplikacje na stanowiska do firmy.</p>
     <table class="table table-hover">
@@ -64,7 +67,8 @@ Witaj ${user.fullname}
                 <td class="padding">
                     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć
                     </button>
-                    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Własna odmowa
+                    <button onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Własna
+                        odmowa
                     </button>
                     <button onclick="javascript:document.location.href='/candidate/${candidate.id}/accept'">Akceptuj
                     </button>

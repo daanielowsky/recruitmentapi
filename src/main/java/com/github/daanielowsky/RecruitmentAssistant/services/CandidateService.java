@@ -92,5 +92,7 @@ public class CandidateService {
                 "\n Thank you for your intrest in our job offer. " +
                 "\n Best regards" +
                 "\n Lorem Ipsum");
+
+        mailSender.send(simpleMailMessage);
     }
 }
