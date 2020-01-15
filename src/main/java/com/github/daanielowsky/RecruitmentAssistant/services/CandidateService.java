@@ -1,10 +1,12 @@
 package com.github.daanielowsky.RecruitmentAssistant.services;
 
 import com.github.daanielowsky.RecruitmentAssistant.dto.CandidateDTO;
+import com.github.daanielowsky.RecruitmentAssistant.dto.ResourceDTO;
 import com.github.daanielowsky.RecruitmentAssistant.entity.Candidate;
 import com.github.daanielowsky.RecruitmentAssistant.repositories.CandidateRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
@@ -94,5 +96,16 @@ public class CandidateService {
                 "\n Lorem Ipsum");
 
         mailSender.send(simpleMailMessage);
+    }
+
+    public ResourceDTO getCvOfTheCandidate(Long id) {
+        ResourceDTO resourceDTO = new ResourceDTO();
+        Candidate candidate = candidateRepository.getFirstById(id);
+        if (candidate.getFileType() != null) {
+            ByteArrayResource resource = new ByteArrayResource(candidate.getFile());
+            resourceDTO.setResource(resource);
+            resourceDTO.setContentType(candidate.getFileType());
+        }
+        return resourceDTO;
     }
 }
