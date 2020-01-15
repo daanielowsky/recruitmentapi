@@ -52,13 +52,12 @@ public class CandidatesReviewController {
 
     @PostMapping("/candidate/{id}/own/reject")
     public String rejectingCandidatesApplicationWithOwnMessage(@PathVariable("id") Long id, @RequestParam("message") String message) {
-
         candidateService.rejectingCandidateApplicationWithOwnMessage(id, message);
         return "redirect:/candidates";
     }
 
     @GetMapping("/candidate/{id}/cv")
-    public ResponseEntity<Resource> getOfferImage(@PathVariable Long id) {
+    public ResponseEntity<Resource> getCandidatesCv(@PathVariable Long id) {
         ResourceDTO candidatesCv = candidateService.getCvOfTheCandidate(id);
         if (candidatesCv.getResource() != null) {
             return ResponseEntity.ok().contentType(MediaType.valueOf(candidatesCv.getContentType())).body(candidatesCv.getResource());

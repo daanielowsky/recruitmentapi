@@ -45,9 +45,9 @@
                 <td class="paddingForTable">${candidate.phoneNumber}</td>
                 <td class="paddingForTable"><button class="btn btn-info" onclick="window.open('/candidate/${candidate.id}/cv', target='_blank')">CV</button> </td>
                 <td class="paddingForTable">
-                    <button class="btn btn-warning" onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć
+                    <button class="btn btn-danger" onclick="javascript:document.location.href='/candidate/${candidate.id}/reject'">Odrzuć
                     </button>
-                    <button class="btn btn-danger" onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Własna
+                    <button class="btn btn-warning" onclick="javascript:document.location.href='/candidate/${candidate.id}/own/reject'">Własna
                         odmowa
                     </button>
                     <button class="btn btn-success" onclick="javascript:document.location.href='/candidate/${candidate.id}/accept'">Akceptuj
