@@ -65,6 +65,13 @@ public class CandidateService {
         candidateRepository.delete(candidate);
     }
 
+    public List<QualifiedCandidates> gettingListOfAllQualifiedCandidates(){
+        List<QualifiedCandidates> allBy = qualifiedCandidatesRepository.getAllBy();
+        return allBy;
+    }
+
+    //Mailing system
+
     public void sendingMailToCandidateThatQualified(Candidate candidate){
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(candidate.getEmail());
